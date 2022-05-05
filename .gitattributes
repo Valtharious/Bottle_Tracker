@@ -1,2 +1,33 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+#variables
+Bottle = 0
+Ounces = 0.00
+Target_Ounces = 0
+Total_Ounces = 0.00
+Today = ""
+Keep_going = "yes"
+#Imports
+from datetime import date
+Today = date.today()
+#Inputs from user and a decent loop to add bottles and the ounces after every iteration
+Target_Ounces = int(input("What is Target amount of ounces for baby to drink today? "))#goal amnt of ounces to drink
+print()
+while Keep_going == "yes":
+    Ounces = float(input("How many ounces did the baby drink this bottle? "))
+    Bottle += 1
+    Total_Ounces += Ounces
+    #displays total ounces and bottles so far.
+    print("Total Ounces drank today is:", Total_Ounces)
+    print("Total Bottles drank today is:", Bottle)
+    print()
+    Keep_going = input("Did the baby drink another bottle?(Enter yes to continue): ")
+    print()
+    if Keep_going != "yes":
+        print()#at end of loop displays date and totals for the entire day
+        print("Time for a goodnight sleep!")
+        print()
+print(Today)
+print("Target Ounces for baby to drink today is:", Target_Ounces)
+print("Total Ounces drank today is:", Total_Ounces)
+print("Total Bottles drank today is:", Bottle)
